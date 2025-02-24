@@ -263,11 +263,14 @@ input.search:focus, input.search:active {
   height: 40px;
   line-height: 40px;
   text-align: center;
-  background-color: #007bff;
   color: white;
   border-radius: 50%;
   margin-right: 8px;
   font-weight: bold;
+}
+
+span.link-logo {
+  background-color: #007bff;
 }
 
 .link-name {

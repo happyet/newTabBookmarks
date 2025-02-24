@@ -28,7 +28,7 @@ async function renderNavLists() {
       const randomColor = getRandomColor();
       linkDiv.innerHTML = `
         <a href="${link.url}" target="_blank">
-          ${link.icon ? `<img src="${link.icon}" alt="${link.name}">` : `<span class="link-logo" style="background-color: ${randomColor};">${firstChar}</span>`}
+          ${link.icon ? `<img class="link-logo" src="${link.icon}" alt="${link.name}">` : `<span class="link-logo" style="background-color: ${randomColor};">${firstChar}</span>`}
           <div>
             <span class="link-name">${link.name}</span>
             ${link.desc ? `<span class="link-desc">${link.desc}</span>` : ''}
@@ -84,8 +84,11 @@ function applySettings(settings) {
   }
 
   if (settings.backgroundColor && settings.backgroundOpacity !== undefined) {
-    const rgbaColor = `rgba(${settings.backgroundColor.slice(1).match(/.{1,2}/g).map(x => parseInt(x, 16)).join(', ')}, ${settings.backgroundOpacity})`;
+    const rgbColor = `${settings.backgroundColor.slice(1).match(/.{1,2}/g).map(x => parseInt(x, 16)).join(', ')}`;
+    const rgbaColor = `rgba(${rgbColor}, ${settings.backgroundOpacity})`;
     document.querySelector('.wrapper-left').style.backgroundColor = rgbaColor;
+    document.querySelectorAll('.link-name').forEach(element => { element.style.color = settings.backgroundColor; });
+    document.querySelectorAll('.link-desc').forEach(element => { element.style.color = `rgba(${rgbColor}, 0.6)`; });
   } else {
     document.querySelector('.wrapper-left').style.backgroundColor = ''; // 清除背景颜色
   }
