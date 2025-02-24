@@ -28,7 +28,7 @@ async function renderNavLists() {
       const randomColor = getRandomColor();
       linkDiv.innerHTML = `
         <a href="${link.url}" target="_blank">
-          <span class="link-logo" style="background-color: ${randomColor};">${firstChar}</span>
+          ${link.icon ? `<img src="${link.icon}" alt="${link.name}">` : `<span class="link-logo" style="background-color: ${randomColor};">${firstChar}</span>`}
           <div>
             <span class="link-name">${link.name}</span>
             ${link.desc ? `<span class="link-desc">${link.desc}</span>` : ''}
@@ -182,62 +182,70 @@ async function saveNavigationOrder() {
 }
 
 // 切换编辑模式
-document.getElementById('toggle-edit').addEventListener('click', () => {
-  isEditMode = !isEditMode;
-  renderNavLists();
-  document.getElementById('toggle-edit').textContent = isEditMode ? '完成' : '编辑';
-  // 确保在切换编辑模式时应用设置
-  chrome.storage.sync.get({ setting: {} }, (data) => {
-    applySettings(data.setting);
+const toggleEditButton = document.getElementById('toggle-edit');
+if (toggleEditButton) {
+  toggleEditButton.addEventListener('click', () => {
+    isEditMode = !isEditMode;
+    renderNavLists();
+    toggleEditButton.textContent = isEditMode ? '完成' : '编辑';
+    // 确保在切换编辑模式时应用设置
+    chrome.storage.sync.get({ setting: {} }, (data) => {
+      applySettings(data.setting);
+    });
   });
-});
+}
 
 // 删除链接
-document.getElementById('nav-list').addEventListener('click', async (e) => {
-  if (e.target.classList.contains('delete-link')) {
-    const category = e.target.dataset.category;
-    const index = e.target.dataset.index;
-    const data = await chrome.storage.sync.get({ navigation: {} });
+const navListButton = document.getElementById('nav-list');
+if (navListButton) {
+  navListButton.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('delete-link')) {
+      const category = e.target.dataset.category;
+      const index = e.target.dataset.index;
+      const data = await chrome.storage.sync.get({ navigation: {} });
 
-    // 删除链接
-    data.navigation[category].splice(index, 1);
+      // 删除链接
+      data.navigation[category].splice(index, 1);
 
-    // 检查分类是否为空
-    if (data.navigation[category].length === 0) {
-      delete data.navigation[category]; // 删除空分类
-      const categoryOrder = (await chrome.storage.sync.get({ categoryOrder: [] })).categoryOrder;
-      const updatedOrder = categoryOrder.filter(cat => cat !== category); // 从分类顺序中移除
-      await chrome.storage.sync.set({ navigation: data.navigation, categoryOrder: updatedOrder });
-    } else {
-      await chrome.storage.sync.set({ navigation: data.navigation });
+      // 检查分类是否为空
+      if (data.navigation[category].length === 0) {
+        delete data.navigation[category]; // 删除空分类
+        const categoryOrder = (await chrome.storage.sync.get({ categoryOrder: [] })).categoryOrder;
+        const updatedOrder = categoryOrder.filter(cat => cat !== category); // 从分类顺序中移除
+        await chrome.storage.sync.set({ navigation: data.navigation, categoryOrder: updatedOrder });
+      } else {
+        await chrome.storage.sync.set({ navigation: data.navigation });
+      }
+
+      renderNavLists();
     }
-
-    renderNavLists();
-  }
-});
+  });
+}
 
 // 添加编辑链接事件监听器
-document.getElementById('nav-list').addEventListener('click', async (e) => {
-  if (e.target.classList.contains('edit-link')) {
-    const category = e.target.dataset.category;
-    const index = e.target.dataset.index;
-    const data = await chrome.storage.sync.get({ navigation: {} });
+if (navListButton) {
+  navListButton.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('edit-link')) {
+      const category = e.target.dataset.category;
+      const index = e.target.dataset.index;
+      const data = await chrome.storage.sync.get({ navigation: {} });
 
-    // 获取当前链接的名称和 URL
-    const link = data.navigation[category][index];
-    const newName = prompt('编辑链接名称:', link.name);
-    const newUrl = prompt('编辑链接 URL:', link.url);
-    const newIcon = prompt('编辑链接图标地址:', link.icon);
-    const newDesc = prompt('编辑链接描述:', link.desc);
+      // 获取当前链接的名称和 URL
+      const link = data.navigation[category][index];
+      const newName = prompt('编辑链接名称:', link.name);
+      const newUrl = prompt('编辑链接 URL:', link.url);
+      const newIcon = prompt('编辑链接图标地址:', link.icon);
+      const newDesc = prompt('编辑链接描述:', link.desc);
 
-    if (newName && newUrl) {
-      // 更新链接的名称和 URL
-      data.navigation[category][index] = { name: newName, url: newUrl, icon: newIcon, desc: newDesc };
-      await chrome.storage.sync.set({ navigation: data.navigation });
-      renderNavLists(); // 重新渲染分类和链接
+      if (newName && newUrl) {
+        // 更新链接的名称和 URL
+        data.navigation[category][index] = { name: newName, url: newUrl, icon: newIcon, desc: newDesc };
+        await chrome.storage.sync.set({ navigation: data.navigation });
+        renderNavLists(); // 重新渲染分类和链接
+      }
     }
-  }
-});
+  });
+}
 
 // 导入 JSON
 document.getElementById('import-json').addEventListener('click', () => {
