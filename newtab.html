@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>自定义网页导航</title>
+  <title>乐乎书签</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
@@ -9,26 +9,30 @@
 <body>
 <div class="wrapper">
   <div class="wrapper-left">
-    <h2 id="site-title">网页导航</h2>
+    <h1 id="site-title">乐乎书签</h1>
+    <h2 id="current-date">0000年00月00日</h2>
+    <h3 id="current-time">星期一  00:00:00</h3>
     <div id="categories"></div>
 
   </div>
   <div class="wrapper-right">
-  <div id="import-export-buttons">
-    <button id="toggle-edit">编辑</button>
-    <button id="setting" class="edit-mode-button">设置</button>
-	  <button id="import-json" class="edit-mode-button">导入</button>
-	  <button id="export-json" class="edit-mode-button">导出</button>
-  </div>
+    <div id="import-export-buttons">
+      <button id="toggle-edit">编辑</button>
+      <button id="setting" class="edit-mode-button">设置</button>
+      <button id="import-json" class="edit-mode-button">导入</button>
+      <button id="export-json" class="edit-mode-button">导出</button>
+    </div>
 
-  <form class="searchform" action="https://www.bing.com/search" target="_blank">
-    <input class="search" id="search-input" type="text" name="q" placeholder="Bing搜索" autocomplete="off">
-		<ul id="search-results"></ul>
-	</form>
-  <div id="nav-list">
-    <!-- 导航链接将动态加载到这里 -->
+    <div class="poem_content"><h3 id="poem_sentence"></h3><span id="poem_info"></span></div>
+    <form class="searchform" action="https://www.bing.com/search" target="_blank">
+      <input class="search" id="search-input" type="text" name="q" placeholder="Bing搜索" autocomplete="off">
+      <ul id="search-results"></ul>
+    </form>
+    <div id="nav-list">
+      <!-- 导航链接将动态加载到这里 -->
+    </div>
+    <div class="footer">© 自娱自乐，不亦乐乎!</div>
   </div>
-</div>
 </div>
 <!-- 设置对话框 -->
 <div id="settings-dialog" class="hidden">
@@ -49,6 +53,6 @@
   </div>
   <center><button id="save-settings">保存</button> <button id="cancel-settings">取消</button></center>
 </div>
-  <script src="newtab.js"></script>
+<script src="newtab.js"></script>
 </body>
 </html>

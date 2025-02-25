@@ -34,6 +34,10 @@
       "128": "icons/icon128.png"
     },
     "host_permissions": [
-      "https://www.bing.com/*"
-    ]
+      "https://www.bing.com/*",
+      "https://sdk.jinrishici.com/*"
+    ],
+    "content_security_policy": {
+      "extension_pages": "script-src 'self' https://sdk.jinrishici.com; object-src 'self'"
+    }
   }

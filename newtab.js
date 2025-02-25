@@ -110,17 +110,19 @@ function applySettings(settings) {
 }
 
 function setBackgroundStyle(imageUrl) {
-  document.body.style.backgroundImage = `url(${imageUrl})`;
-  document.body.style.backgroundSize = 'cover';
-  document.body.style.backgroundPosition = 'center';
-  document.body.style.backgroundRepeat = 'no-repeat';
+  const bodyWrapper = document.querySelector('.wrapper');
+  bodyWrapper.style.backgroundImage = `url(${imageUrl})`;
+  bodyWrapper.style.backgroundSize = 'cover';
+  bodyWrapper.style.backgroundPosition = 'center';
+  bodyWrapper.style.backgroundRepeat = 'no-repeat';
 }
 
 function clearBackgroundStyle() {
-  document.body.style.backgroundImage = ''; // 清除背景图片
-  document.body.style.backgroundSize = '';
-  document.body.style.backgroundPosition = '';
-  document.body.style.backgroundRepeat = '';
+  const bodyWrapper = document.querySelector('.wrapper');
+  bodyWrapper.style.backgroundImage = ''; // 清除背景图片
+  bodyWrapper.style.backgroundSize = '';
+  bodyWrapper.style.backgroundPosition = '';
+  bodyWrapper.style.backgroundRepeat = '';
 }
 
 // 添加拖拽事件
@@ -132,9 +134,12 @@ function addDragEvents(container, type) {
 
 // 拖拽开始
 function handleDragStart(e) {
-  draggedItem = e.target;
-  e.target.classList.add('dragging');
-  e.dataTransfer.setData('text/plain', ''); // 必须设置数据才能拖拽
+  // 找到最近的 .link 或 .category 祖先元素
+  draggedItem = e.target.closest('.link, .category');
+  if (draggedItem) {
+    draggedItem.classList.add('dragging');
+    e.dataTransfer.setData('text/plain', ''); // 必须设置数据才能拖拽
+  }
 }
 
 // 拖拽经过
@@ -168,7 +173,10 @@ async function saveNavigationOrder() {
   const data = await chrome.storage.sync.get({ navigation: {}, categoryOrder: [] });
 
   // 更新分类顺序
-  const updatedOrder = Array.from(navListDiv.children).map(div => div.querySelector('h2').innerText);
+  const updatedOrder = Array.from(navListDiv.children)
+    .map(div => div.querySelector('h2'))
+    .filter(h2 => h2 !== null)
+    .map(h2 => h2.innerText);
   data.categoryOrder = updatedOrder;
 
   // 更新链接顺序
@@ -251,46 +259,53 @@ if (navListButton) {
 }
 
 // 导入 JSON
-document.getElementById('import-json').addEventListener('click', () => {
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = '.json';
-  input.onchange = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        try {
-          const jsonData = JSON.parse(e.target.result);
-          // 验证 JSON 数据结构
-          if (jsonData.navigation && jsonData.categoryOrder) {
-            chrome.storage.sync.set(jsonData, () => {
-              alert('导入成功！');
-              renderNavLists(); // 重新加载导航数据
-            });
-          } else {
-            alert('导入失败：JSON 数据格式不正确！');
+const importJsonButton = document.getElementById('import-json');
+if (importJsonButton) {
+  importJsonButton.addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          try {
+            const jsonData = JSON.parse(e.target.result);
+            // 验证 JSON 数据结构
+            if (jsonData.navigation && jsonData.categoryOrder) {
+              chrome.storage.sync.set(jsonData, () => {
+                alert('导入成功！');
+                renderNavLists(); // 重新加载导航数据
+              });
+            } else {
+              alert('导入失败：JSON 数据格式不正确！');
+            }
+          } catch (error) {
+            alert('导入失败：文件格式不正确！');
           }
-        } catch (error) {
-          alert('导入失败：文件格式不正确！');
-        }
-      };
-      reader.readAsText(file);
-    }
-  };
-  input.click();
-});
+        };
+        reader.readAsText(file);
+      }
+    };
+    input.click();
+  });
+}
 
 // 导出 JSON
-document.getElementById('export-json').addEventListener('click', async () => {
-  const data = await chrome.storage.sync.get({ navigation: {}, categoryOrder: [] });
-  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'links.json';
-  a.click();
-});
+const exportJsonButton = document.getElementById('export-json');
+if (exportJsonButton) {
+  exportJsonButton.addEventListener('click', async () => {
+    const data = await chrome.storage.sync.get({ navigation: {}, categoryOrder: [] });
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'links.json';
+    a.click();
+  });
+}
+
 
 // 监听消息
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -446,3 +461,59 @@ function setupSettingsDialog() {
     applySettings(data.setting);
   });
 }
+function todayTime(){
+  var date = new Date();
+  var y = date.getFullYear();	//获取年份
+  var M = date.getMonth()+1;	//获取月份 getMonth返回0、1、2、...、11，分别代表1~12月
+  var d = date.getDate();	//获取日期
+  var w = date.getDay();	//获取星期 getDay返回0、1、2、...、6，分别代表周日、周一、...、周六
+  switch(w){
+    case 1:
+      w = '一';
+      break;
+    case 2:
+      w = '二';
+      break;
+    case 3:
+      w = '三';
+      break;
+    case 4:
+      w = '四';
+      break;
+    case 5:
+      w = '五';
+      break;
+    case 6:
+      w = '六';
+      break;
+    default:
+      w = '日';
+  }
+  var h = date.getHours();	//获取小时
+  if(h>=0 && h<=9) h = '0'+h;
+  var m = date.getMinutes();	//获取分钟
+  if(m>=0 && m<=9) m = '0'+m;
+  var s = date.getSeconds();
+  if(s>=0 && s<=9) s = '0'+s;
+  var currentDate = document.getElementById('current-date');
+  var currentTime = document.getElementById('current-time');
+  currentDate.innerHTML = y+'年'+M+'月'+d+'日';
+  currentTime.innerHTML = '星期'+w+'  '+h+':'+m+':'+s;
+}
+setInterval(todayTime,1000);
+
+
+async function fetchPoetry() {
+  try {
+    const response = await fetch('https://v2.jinrishici.com/one.json?client=browser-sdk/1.2');
+    if (!response.ok) {
+      throw new Error('网络响应失败');
+    }
+    const data = await response.json();
+    document.getElementById('poem_sentence').textContent = data.data.content;
+    document.getElementById('poem_info').textContent = '【' + data.data.origin.dynasty +'】 '+ data.data.origin.author + ' 《' + data.data.origin.title + '》';
+  } catch (error) {
+    console.error('获取诗词数据失败:', error);
+  }
+}
+fetchPoetry();
