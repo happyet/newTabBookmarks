@@ -150,6 +150,14 @@ label {
   font-weight: normal;
 }
 
+.wrapper-left h2 {
+  font-size: 20px;
+}
+
+.wrapper-left h3 {
+  font-size: 16px;
+}
+
 .wrapper-left ul li {
   display: inline-block;
   text-align: center;
@@ -380,7 +388,7 @@ span.link-logo {
   }
 
   .wrapper-right {
-    padding: 60px 20px 0;
+    padding: 50px 20px 0;
     flex: 1 1 auto;
   }
 
