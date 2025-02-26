@@ -47,6 +47,13 @@ document.addEventListener('DOMContentLoaded', async () => {
         data.navigation[categoryName] = [];
         data.categoryOrder.push(categoryName);
       }
+
+      // const newLink = Object.assign({}, { name: linkName, url: linkUrl, icon: linkIcon, desc: linkDesc });
+      // data.navigation[categoryName].push(newLink);
+      // await chrome.storage.sync.set({
+      //   navigation: data.navigation,
+      //   categoryOrder: data.categoryOrder,
+      // });
       data.navigation[categoryName].push({ name: linkName, url: linkUrl, icon: linkIcon, desc: linkDesc });
       await chrome.storage.sync.set({
         navigation: data.navigation,

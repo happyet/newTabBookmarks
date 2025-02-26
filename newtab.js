@@ -110,19 +110,24 @@ function applySettings(settings) {
 }
 
 function setBackgroundStyle(imageUrl) {
-  const bodyWrapper = document.querySelector('.wrapper');
-  bodyWrapper.style.backgroundImage = `url(${imageUrl})`;
-  bodyWrapper.style.backgroundSize = 'cover';
-  bodyWrapper.style.backgroundPosition = 'center';
-  bodyWrapper.style.backgroundRepeat = 'no-repeat';
+  const existingImg = document.querySelector('.background-img');
+  if (existingImg) {
+    document.body.removeChild(existingImg);
+  }
+
+  const bgImg = document.createElement('img');
+  bgImg.src = imageUrl;
+  bgImg.alt = '背景图片';
+  bgImg.className = 'background-img';
+
+  document.body.insertBefore(bgImg, document.body.firstChild);
 }
 
 function clearBackgroundStyle() {
-  const bodyWrapper = document.querySelector('.wrapper');
-  bodyWrapper.style.backgroundImage = ''; // 清除背景图片
-  bodyWrapper.style.backgroundSize = '';
-  bodyWrapper.style.backgroundPosition = '';
-  bodyWrapper.style.backgroundRepeat = '';
+  const bgImg = document.querySelector('.background-img');
+  if (bgImg) {
+    document.body.removeChild(bgImg);
+  }
 }
 
 // 添加拖拽事件
@@ -185,6 +190,8 @@ async function saveNavigationOrder() {
     const links = Array.from(categoryDiv.querySelectorAll('.link')).map(linkDiv => ({
       name: linkDiv.querySelector('.link-name').innerText,
       url: linkDiv.querySelector('a').href,
+      icon: linkDiv.querySelector('a img') ? linkDiv.querySelector('a img').src : '',
+      desc: linkDiv.querySelector('.link-desc') ? linkDiv.querySelector('.link-desc').innerText : ''
     }));
     data.navigation[category] = links;
   });
@@ -297,7 +304,31 @@ const exportJsonButton = document.getElementById('export-json');
 if (exportJsonButton) {
   exportJsonButton.addEventListener('click', async () => {
     const data = await chrome.storage.sync.get({ navigation: {}, categoryOrder: [] });
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+
+    // 定义属性顺序
+    const propertyOrder = ['name', 'url', 'icon', 'desc'];
+
+    // 使用 JSON.stringify 的第二个参数来确保属性顺序
+    const jsonString = JSON.stringify(data, (key, value) => {
+      if (Array.isArray(value)) {
+        return value.map(item => {
+          if (typeof item === 'object' && item !== null) {
+            // 创建一个新的对象并按指定顺序添加属性
+            const orderedItem = {};
+            propertyOrder.forEach(prop => {
+              if (item.hasOwnProperty(prop)) {
+                orderedItem[prop] = item[prop];
+              }
+            });
+            return orderedItem;
+          }
+          return item;
+        });
+      }
+      return value;
+    }, 2);
+
+    const blob = new Blob([jsonString], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
@@ -372,6 +403,11 @@ document.addEventListener('DOMContentLoaded', () => {
   chrome.storage.sync.get({ setting: {} }, (data) => {
     applySettings(data.setting);
   });
+
+  if (window.location.pathname.endsWith('newtab.html')) {
+    setInterval(todayTime, 1000);
+    fetchPoetry();
+  }
 });
 
 let bookmarks = [];
@@ -495,13 +531,13 @@ function todayTime(){
   if(m>=0 && m<=9) m = '0'+m;
   var s = date.getSeconds();
   if(s>=0 && s<=9) s = '0'+s;
-  var currentDate = document.getElementById('current-date');
-  var currentTime = document.getElementById('current-time');
-  currentDate.innerHTML = y+'年'+M+'月'+d+'日';
-  currentTime.innerHTML = '星期'+w+'  '+h+':'+m+':'+s;
+  const currentDate = document.getElementById('current-date');
+  const currentTime = document.getElementById('current-time');
+  if (currentDate && currentTime){
+    currentDate.innerHTML = y+'年'+M+'月'+d+'日';
+    currentTime.innerHTML = '星期'+w+'  '+h+':'+m+':'+s;
+  }
 }
-setInterval(todayTime,1000);
-
 
 async function fetchPoetry() {
   try {
@@ -516,4 +552,3 @@ async function fetchPoetry() {
     console.error('获取诗词数据失败:', error);
   }
 }
-fetchPoetry();

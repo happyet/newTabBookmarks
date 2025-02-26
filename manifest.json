@@ -35,9 +35,9 @@
     },
     "host_permissions": [
       "https://www.bing.com/*",
-      "https://sdk.jinrishici.com/*"
+      "https://v2.jinrishici.com/*"
     ],
     "content_security_policy": {
-      "extension_pages": "script-src 'self' https://sdk.jinrishici.com; object-src 'self'"
+      "extension_pages": "script-src 'self'; connect-src 'self' https://v2.jinrishici.com https://www.bing.com;;"
     }
   }
