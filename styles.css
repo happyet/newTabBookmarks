@@ -251,7 +251,7 @@ input.search:focus, input.search:active {
   font-size: 14px;
   color: #345;
   font-weight: normal;
-  padding: 0 10px 5px;
+  padding: 0 4px 6px;
   margin: 0;
 }
 
@@ -388,7 +388,7 @@ span.link-logo {
   }
 
   .wrapper-right {
-    padding: 50px 20px 0;
+    padding: 50px 30px 0;
     flex: 1 1 auto;
   }
 
