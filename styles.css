@@ -263,7 +263,6 @@ input.search:focus, input.search:active {
 .link {
   position: relative;
   padding: 10px;
-  min-height: 62px;
   border: 1px solid rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.5);
@@ -301,7 +300,7 @@ input.search:focus, input.search:active {
 
 .link-logo {
   font-size: 20px;
-  display: inline-block;
+  display: none;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -321,6 +320,7 @@ span.link-logo {
 }
 
 .link-desc {
+  display: none;
   font-size: 12px;
   color: #979898;
   margin: 0;
@@ -399,6 +399,15 @@ span.link-logo {
 
   .category {
     padding: 15px 20px;
+  }
+  .link {
+    min-height: 62px;
+  }
+  .link-logo {
+    display: inline-block;
+  }
+  .link-desc {
+    display: block;
   }
 }
 
