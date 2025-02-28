@@ -197,7 +197,14 @@ async function saveNavigationOrder() {
       icon: linkDiv.querySelector('a img') ? linkDiv.querySelector('a img').src : '',
       desc: linkDiv.querySelector('.link-desc') ? linkDiv.querySelector('.link-desc').innerText : ''
     }));
-    data.navigation[category] = links;
+    if (links.length === 0) {
+      // 如果分类下没有链接，删除该分类
+      delete data.navigation[category];
+      const updatedOrder = data.categoryOrder.filter(cat => cat !== category); // 从分类顺序中移除
+      data.categoryOrder = updatedOrder;
+    } else {
+      data.navigation[category] = links;
+    }
   });
 
   await chrome.storage.sync.set(data);
