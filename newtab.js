@@ -87,10 +87,14 @@ function applySettings(settings) {
     const rgbColor = `${settings.backgroundColor.slice(1).match(/.{1,2}/g).map(x => parseInt(x, 16)).join(', ')}`;
     const rgbaColor = `rgba(${rgbColor}, ${settings.backgroundOpacity})`;
     document.querySelector('.wrapper-left').style.backgroundColor = rgbaColor;
+    document.querySelector('.wrapper-right').style.background = `linear-gradient(45deg, ${rgbaColor}, transparent 80%)`;
+    document.querySelector('.poem_content').style.color = `rgba(255, 255, 255, 0.8)`;
     document.querySelectorAll('.link-name').forEach(element => { element.style.color = settings.backgroundColor; });
     document.querySelectorAll('.link-desc').forEach(element => { element.style.color = `rgba(${rgbColor}, 0.6)`; });
   } else {
     document.querySelector('.wrapper-left').style.backgroundColor = ''; // 清除背景颜色
+    document.querySelector('.wrapper-right').style.background = '';
+    document.querySelector('.poem_content').style.color = '';
   }
 
   if (settings.useBingImage) {

@@ -23,7 +23,9 @@
       <button id="export-json" class="edit-mode-button">导出</button>
     </div>
 
-    <div class="poem_content"><h3 id="poem_sentence"></h3><span id="poem_info"></span></div>
+    <div class="poem_content">
+      <div><h3 id="poem_sentence"></h3><span id="poem_info"></span></div>
+    </div>
     <form class="searchform" action="https://www.bing.com/search" target="_blank">
       <input class="search" id="search-input" type="text" name="q" placeholder="Bing搜索" autocomplete="off">
       <ul id="search-results"></ul>
@@ -40,16 +42,17 @@
   <div class="settings-form">
     <label for="title">页面标题:</label>
     <p><input type="text" id="title" placeholder="输入页面标题"></p>
-    
     <label for="background-image">背景图片URL:</label>
     <p><input type="text" id="background-image" placeholder="输入背景图片URL"></p>
-
-    <p style="display: flex;align-items: center;"><input type="checkbox" id="use-bing-image"> <label for="use-bing-image">使用Bing每日一图</label></p>
-    
-    <p style="display: flex;align-items: center;"><label for="background-color">背景颜色:</label><input type="color" id="background-color"></p>
-
-    <p style="display: flex;align-items: center;"><label for="background-opacity">背景颜色透明度:</label><input type="number" id="background-opacity" min="0" max="1" step="0.01" value="1"></p>
-    
+    <p style="display: flex;align-items: center;">
+      <input type="checkbox" id="use-bing-image"> <label for="use-bing-image">使用Bing每日一图</label>
+    </p>
+    <p style="display: flex;align-items: center;">
+      <label for="background-color">背景颜色:</label><input type="color" id="background-color">
+    </p>
+    <p style="display: flex;align-items: center;">
+      <label for="background-opacity">背景颜色透明度:</label><input type="number" id="background-opacity" min="0" max="1" step="0.01" value="1">
+    </p>
   </div>
   <center><button id="save-settings">保存</button> <button id="cancel-settings">取消</button></center>
 </div>

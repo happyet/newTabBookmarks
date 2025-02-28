@@ -1,8 +1,9 @@
 {
     "manifest_version": 3,
-    "name": "自定义网页导航插件",
-    "version": "1.0",
-    "description": "允许用户自定义添加、删除和分类导航链接",
+    "name": "不亦乐乎网页收藏插件",
+    "version": "2.5",
+    "description": "允许用户自定义添加、删除和分类导航链接。作者: LMS.im",
+    "author": "LMS",
     "permissions": [
       "storage",
       "activeTab",
