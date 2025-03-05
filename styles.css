@@ -47,7 +47,7 @@ label {
 
 #import-export-buttons {
   position: absolute;
-  top: 30px;
+  bottom: 30px;
   right: 2%;
 }
 
@@ -142,7 +142,7 @@ label {
 .wrapper-left h1 {
   font-size: 24px;
   font-weight: normal;
-  padding: 10px 0;
+  padding: 10px 0 5px;
 }
 
 .wrapper-left h2, .wrapper-left h3 {
@@ -161,7 +161,7 @@ label {
 .wrapper-left ul li {
   display: inline-block;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .wrapper-left ul li span {
@@ -177,7 +177,7 @@ label {
 }
 
 .poem_content {
-  padding: 10px 0 30px;
+  padding: 0 0 20px;
   text-align: center;
 }
 
@@ -190,7 +190,7 @@ label {
 .searchform {
   position: relative;
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
 }
 
 input.search {
@@ -343,6 +343,9 @@ span.link-logo {
 
 /* 响应式样式 */
 @media screen and (min-width: 768px) {
+  #import-export-buttons {
+    top: 30px;
+  }
   .wrapper-left {
     position: relative;
     width: 210px;
@@ -371,7 +374,7 @@ span.link-logo {
   .wrapper-left ul li {
     display: block;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .wrapper-left ul li span {
