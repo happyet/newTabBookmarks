@@ -1,5 +1,7 @@
 # 浏览器新建页面自定义网页书签导航插件
 
+地址：https://lms.im/magic/chrome-new-tab-bookmark-plugin/
+
 ## 使用方法
 
 1. 下载项目到本地并解压得到 newTabBookmarks 文件夹
