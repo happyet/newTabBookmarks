@@ -426,3 +426,52 @@ span.link-logo {
     grid-template-columns: repeat(5, 1fr);
   }
 }
+
+@media(prefers-color-scheme: dark) {
+  body {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.2);
+  }
+  .wrapper-left {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  input.search {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  input.search:focus, input.search:active {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .category {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), transparent 30%);
+  }
+  .category h2 {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  .link {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .link:hover {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+  }
+  .link-name {
+    color: rgba(255, 255, 255, 0.8) !important;
+  }
+  .link-desc {
+    color: rgba(255, 255, 255, 0.5) !important;
+  }
+  .background-img, .link-logo {
+    filter: brightness(0.5);
+  }
+  #settings-dialog {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  label {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  input[type="text"], input[type="number"] {
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
