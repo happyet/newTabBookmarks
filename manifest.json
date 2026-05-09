@@ -1,13 +1,24 @@
 {
     "manifest_version": 3,
-    "name": "不亦乐乎网页收藏插件",
-    "version": "2.6",
-    "description": "允许用户自定义添加、删除和分类导航链接。作者: LMS.im",
+    "name": "__MSG_extension_name__",
+    "short_name": "__MSG_extension_short_name__",
+    "description": "__MSG_extension_description__",
+    "version": "2.9.5",
+    "version_name": "2.9.5",
     "author": "LMS",
+    "icons": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
     "permissions": [
       "storage",
-      "activeTab",
+      "bookmarks",
+      "tabs",
       "scripting"
+    ],
+    "host_permissions": [
+      "<all_urls>"
     ],
     "background": {
       "service_worker": "background.js"
@@ -21,24 +32,15 @@
       }
     },
     "chrome_url_overrides": {
-      "newtab": "newtab.html" 
+      "newtab": "newtab.html"
     },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["newtab.js"]
-      }
-    ],
-    "icons": {
-      "16": "icons/icon16.png",
-      "48": "icons/icon48.png",
-      "128": "icons/icon128.png"
-    },
-    "host_permissions": [
-      "https://www.bing.com/*",
-      "https://v2.jinrishici.com/*"
-    ],
     "content_security_policy": {
-      "extension_pages": "script-src 'self'; connect-src 'self' https://v2.jinrishici.com https://www.bing.com;;"
-    }
+      "extension_pages": "script-src 'self'; img-src 'self' data: blob: http: https: file:;"
+    },
+    "browser_specific_settings": {
+      "edge": {
+        "update_url": "https://edge.microsoft.com/extensionwebstorebase/v1/crx"
+      }
+    },
+    "default_locale": "zh_CN"
   }

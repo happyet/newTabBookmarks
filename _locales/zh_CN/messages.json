@@ -1,0 +1,258 @@
+{
+  "extension_name": {
+    "message": "不亦乐乎网页收藏插件",
+    "description": "The name of the extension"
+  },
+  "extension_short_name": {
+    "message": "不亦乐乎",
+    "description": "The short name of the extension"
+  },
+  "extension_description": {
+    "message": "允许用户自定义添加、删除和分类导航链接。作者: LMS.im",
+    "description": "The description of the extension"
+  },
+  "popup_title": {
+    "message": "自定义网页导航",
+    "description": "Title of the popup page"
+  },
+  "add_link_title": {
+    "message": "添加链接",
+    "description": "Title for adding link section"
+  },
+  "category_name_label": {
+    "message": "分类名称(*)：",
+    "description": "Label for category name input"
+  },
+  "category_name_placeholder": {
+    "message": "链接分类",
+    "description": "Placeholder for category name input"
+  },
+  "link_name_label": {
+    "message": "链接名称(*):",
+    "description": "Label for link name input"
+  },
+  "link_name_placeholder": {
+    "message": "链接名称",
+    "description": "Placeholder for link name input"
+  },
+  "link_url_label": {
+    "message": "链接 URL(*):",
+    "description": "Label for link URL input"
+  },
+  "link_url_placeholder": {
+    "message": "链接地址",
+    "description": "Placeholder for link URL input"
+  },
+  "link_icon_label": {
+    "message": "链接图标:",
+    "description": "Label for link icon input"
+  },
+  "link_icon_placeholder": {
+    "message": "链接图标",
+    "description": "Placeholder for link icon input"
+  },
+  "link_desc_label": {
+    "message": "链接描述:",
+    "description": "Label for link description input"
+  },
+  "link_desc_placeholder": {
+    "message": "链接描述",
+    "description": "Placeholder for link description input"
+  },
+  "add_link_button": {
+    "message": "添加链接",
+    "description": "Button text to add link"
+  },
+  "error_cannot_get_tab": {
+    "message": "无法获取当前标签页",
+    "description": "Error message when cannot get current tab"
+  },
+  "error_category_required": {
+    "message": "请填写分类名称！",
+    "description": "Error message when category is empty"
+  },
+  "error_link_name_required": {
+    "message": "请填写链接名称！",
+    "description": "Error message when link name is empty"
+  },
+  "error_link_url_required": {
+    "message": "请填写链接地址！",
+    "description": "Error message when link URL is empty"
+  },
+  "error_invalid_url": {
+    "message": "请输入有效的链接地址！",
+    "description": "Error message when URL is invalid"
+  },
+  "success_link_added": {
+    "message": "链接已添加！",
+    "description": "Success message when link is added"
+  },
+  "error_add_failed": {
+    "message": "添加链接失败，请重试。",
+    "description": "Error message when adding link fails"
+  },
+  "newtab_title": {
+    "message": "乐乎书签",
+    "description": "Title of newtab page"
+  },
+  "date_format": {
+    "message": "0000年00月00日",
+    "description": "Date format display"
+  },
+  "time_format": {
+    "message": "星期一  00:00:00",
+    "description": "Time format display"
+  },
+  "edit_button": {
+    "message": "编辑",
+    "description": "Edit button text"
+  },
+  "done_button": {
+    "message": "完成",
+    "description": "Done button text"
+  },
+  "settings_button": {
+    "message": "设置",
+    "description": "Settings button text"
+  },
+  "sync_mode_button": {
+    "message": "同步模式",
+    "description": "Sync mode button text"
+  },
+  "local_mode_button": {
+    "message": "本地模式",
+    "description": "Local mode button text"
+  },
+  "import_bookmarks": {
+    "message": "书签导入",
+    "description": "Import bookmarks button text"
+  },
+  "import_button": {
+    "message": "导入",
+    "description": "Import button text"
+  },
+  "export_button": {
+    "message": "导出",
+    "description": "Export button text"
+  },
+  "daily_poem": {
+    "message": "每日诗词",
+    "description": "Daily poem section title"
+  },
+  "search_placeholder": {
+    "message": "Bing搜索",
+    "description": "Search input placeholder"
+  },
+  "search_aria_label": {
+    "message": "搜索书签或输入搜索内容",
+    "description": "Search input aria label"
+  },
+  "footer_text": {
+    "message": "© 自娱自乐，不亦乐乎!",
+    "description": "Footer copyright text"
+  },
+  "settings_dialog_title": {
+    "message": "设置",
+    "description": "Settings dialog title"
+  },
+  "page_title_label": {
+    "message": "页面标题:",
+    "description": "Page title label"
+  },
+  "page_title_placeholder": {
+    "message": "输入页面标题",
+    "description": "Page title input placeholder"
+  },
+  "background_image_label": {
+    "message": "背景图片URL:",
+    "description": "Background image URL label"
+  },
+  "background_image_placeholder": {
+    "message": "输入背景图片URL",
+    "description": "Background image URL placeholder"
+  },
+  "use_bing_image": {
+    "message": "使用Bing每日一图",
+    "description": "Use Bing daily image checkbox label"
+  },
+  "background_color_label": {
+    "message": "背景颜色:",
+    "description": "Background color label"
+  },
+  "background_opacity_label": {
+    "message": "背景颜色透明度:",
+    "description": "Background opacity label"
+  },
+  "save_button": {
+    "message": "保存",
+    "description": "Save button text"
+  },
+  "clear_all_button": {
+    "message": "清空全部书签",
+    "description": "Clear all bookmarks button text"
+  },
+  "cancel_button": {
+    "message": "取消",
+    "description": "Cancel button text"
+  },
+  "save_category": {
+    "message": "保存",
+    "description": "Save category button text"
+  },
+  "delete_category": {
+    "message": "删除分类",
+    "description": "Delete category button text"
+  },
+  "edit_link": {
+    "message": "编辑",
+    "description": "Edit link button text"
+  },
+  "delete_link": {
+    "message": "删除",
+    "description": "Delete link button text"
+  },
+  "background_image_alt": {
+    "message": "背景图片",
+    "description": "Background image alt text"
+  },
+  "navigation_label": {
+    "message": "分类导航",
+    "description": "Navigation aria label"
+  },
+  "bookmark_category_list": {
+    "message": "书签分类列表",
+    "description": "Bookmark category list aria label"
+  },
+  "edit_tools": {
+    "message": "编辑工具",
+    "description": "Edit tools aria label"
+  },
+  "search_label": {
+    "message": "搜索",
+    "description": "Search aria label"
+  },
+  "bookmark_links": {
+    "message": "书签链接列表",
+    "description": "Bookmark links list aria label"
+  },
+  "search_results": {
+    "message": "搜索结果",
+    "description": "Search results aria label"
+  },
+  "current_date": {
+    "message": "当前日期",
+    "description": "Current date aria label"
+  },
+  "current_time": {
+    "message": "当前时间",
+    "description": "Current time aria label"
+  },
+  "no_category_hint": {
+    "message": "暂无分类，请手动输入",
+    "description": "Hint text when no categories available"
+  },
+  "error_load_category_failed": {
+    "message": "无法加载分类，请手动输入",
+    "description": "Error message when failed to load categories"
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "extension_name": {
+    "message": "LeHu Bookmark Manager",
+    "description": "The name of the extension"
+  },
+  "extension_short_name": {
+    "message": "LeHu",
+    "description": "The short name of the extension"
+  },
+  "extension_description": {
+    "message": "Allows users to customize and categorize navigation links. Author: LMS.im",
+    "description": "The description of the extension"
+  },
+  "popup_title": {
+    "message": "Custom Web Navigation",
+    "description": "Title of the popup page"
+  },
+  "add_link_title": {
+    "message": "Add Link",
+    "description": "Title for adding link section"
+  },
+  "category_name_label": {
+    "message": "Category Name (*):",
+    "description": "Label for category name input"
+  },
+  "category_name_placeholder": {
+    "message": "Link Category",
+    "description": "Placeholder for category name input"
+  },
+  "link_name_label": {
+    "message": "Link Name (*):",
+    "description": "Label for link name input"
+  },
+  "link_name_placeholder": {
+    "message": "Link Name",
+    "description": "Placeholder for link name input"
+  },
+  "link_url_label": {
+    "message": "Link URL (*):",
+    "description": "Label for link URL input"
+  },
+  "link_url_placeholder": {
+    "message": "Link URL",
+    "description": "Placeholder for link URL input"
+  },
+  "link_icon_label": {
+    "message": "Link Icon:",
+    "description": "Label for link icon input"
+  },
+  "link_icon_placeholder": {
+    "message": "Link Icon URL",
+    "description": "Placeholder for link icon input"
+  },
+  "link_desc_label": {
+    "message": "Link Description:",
+    "description": "Label for link description input"
+  },
+  "link_desc_placeholder": {
+    "message": "Link Description",
+    "description": "Placeholder for link description input"
+  },
+  "add_link_button": {
+    "message": "Add Link",
+    "description": "Button text to add link"
+  },
+  "error_cannot_get_tab": {
+    "message": "Cannot get current tab",
+    "description": "Error message when cannot get current tab"
+  },
+  "error_category_required": {
+    "message": "Please enter a category name!",
+    "description": "Error message when category is empty"
+  },
+  "error_link_name_required": {
+    "message": "Please enter a link name!",
+    "description": "Error message when link name is empty"
+  },
+  "error_link_url_required": {
+    "message": "Please enter a link URL!",
+    "description": "Error message when link URL is empty"
+  },
+  "error_invalid_url": {
+    "message": "Please enter a valid URL!",
+    "description": "Error message when URL is invalid"
+  },
+  "success_link_added": {
+    "message": "Link added successfully!",
+    "description": "Success message when link is added"
+  },
+  "error_add_failed": {
+    "message": "Failed to add link, please try again.",
+    "description": "Error message when adding link fails"
+  },
+  "newtab_title": {
+    "message": "LeHu Bookmarks",
+    "description": "Title of newtab page"
+  },
+  "date_format": {
+    "message": "January 01, 2000",
+    "description": "Date format display"
+  },
+  "time_format": {
+    "message": "Monday  00:00:00",
+    "description": "Time format display"
+  },
+  "edit_button": {
+    "message": "Edit",
+    "description": "Edit button text"
+  },
+  "done_button": {
+    "message": "Done",
+    "description": "Done button text"
+  },
+  "settings_button": {
+    "message": "Settings",
+    "description": "Settings button text"
+  },
+  "sync_mode_button": {
+    "message": "Sync Mode",
+    "description": "Sync mode button text"
+  },
+  "local_mode_button": {
+    "message": "Local Mode",
+    "description": "Local mode button text"
+  },
+  "import_bookmarks": {
+    "message": "Import Bookmarks",
+    "description": "Import bookmarks button text"
+  },
+  "import_button": {
+    "message": "Import",
+    "description": "Import button text"
+  },
+  "export_button": {
+    "message": "Export",
+    "description": "Export button text"
+  },
+  "daily_poem": {
+    "message": "Daily Poem",
+    "description": "Daily poem section title"
+  },
+  "search_placeholder": {
+    "message": "Bing Search",
+    "description": "Search input placeholder"
+  },
+  "search_aria_label": {
+    "message": "Search bookmarks or enter search content",
+    "description": "Search input aria label"
+  },
+  "footer_text": {
+    "message": "© For fun and enjoyment!",
+    "description": "Footer copyright text"
+  },
+  "settings_dialog_title": {
+    "message": "Settings",
+    "description": "Settings dialog title"
+  },
+  "page_title_label": {
+    "message": "Page Title:",
+    "description": "Page title label"
+  },
+  "page_title_placeholder": {
+    "message": "Enter page title",
+    "description": "Page title input placeholder"
+  },
+  "background_image_label": {
+    "message": "Background Image URL:",
+    "description": "Background image URL label"
+  },
+  "background_image_placeholder": {
+    "message": "Enter background image URL",
+    "description": "Background image URL placeholder"
+  },
+  "use_bing_image": {
+    "message": "Use Bing Daily Image",
+    "description": "Use Bing daily image checkbox label"
+  },
+  "background_color_label": {
+    "message": "Background Color:",
+    "description": "Background color label"
+  },
+  "background_opacity_label": {
+    "message": "Background Opacity:",
+    "description": "Background opacity label"
+  },
+  "save_button": {
+    "message": "Save",
+    "description": "Save button text"
+  },
+  "clear_all_button": {
+    "message": "Clear All Bookmarks",
+    "description": "Clear all bookmarks button text"
+  },
+  "cancel_button": {
+    "message": "Cancel",
+    "description": "Cancel button text"
+  },
+  "save_category": {
+    "message": "Save",
+    "description": "Save category button text"
+  },
+  "delete_category": {
+    "message": "Delete Category",
+    "description": "Delete category button text"
+  },
+  "edit_link": {
+    "message": "Edit",
+    "description": "Edit link button text"
+  },
+  "delete_link": {
+    "message": "Delete",
+    "description": "Delete link button text"
+  },
+  "background_image_alt": {
+    "message": "Background Image",
+    "description": "Background image alt text"
+  },
+  "navigation_label": {
+    "message": "Category Navigation",
+    "description": "Navigation aria label"
+  },
+  "bookmark_category_list": {
+    "message": "Bookmark Category List",
+    "description": "Bookmark category list aria label"
+  },
+  "edit_tools": {
+    "message": "Edit Tools",
+    "description": "Edit tools aria label"
+  },
+  "search_label": {
+    "message": "Search",
+    "description": "Search aria label"
+  },
+  "bookmark_links": {
+    "message": "Bookmark Links List",
+    "description": "Bookmark links list aria label"
+  },
+  "search_results": {
+    "message": "Search Results",
+    "description": "Search results aria label"
+  },
+  "current_date": {
+    "message": "Current Date",
+    "description": "Current date aria label"
+  },
+  "current_time": {
+    "message": "Current Time",
+    "description": "Current time aria label"
+  },
+  "no_category_hint": {
+    "message": "No categories available, please enter manually",
+    "description": "Hint text when no categories available"
+  },
+  "error_load_category_failed": {
+    "message": "Failed to load categories, please enter manually",
+    "description": "Error message when failed to load categories"
+  }
+}

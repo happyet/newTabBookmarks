@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <title>自定义网页导航</title>
+  <title>添加链接</title>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="add-form">
-	  <h2>添加链接</h2>
-	  <label for="category-name">分类名称(*)：</label>
-	  <input type="text" id="category-name" placeholder="链接分类">
-	  <label for="link-name">链接名称(*):</label>
-	  <input type="text" id="link-name" placeholder="链接名称">
-	  <label for="link-url">链接 URL(*):</label>
-	  <input type="text" id="link-url" placeholder="链接地址">
-	  <label for="link-icon">链接图标:</label>
-	  <input type="text" id="link-icon" placeholder="链接图标">
-	  <label for="link-desc">链接描述:</label>
-	  <input type="text" id="link-desc" placeholder="链接描述">
-	  <button id="add-link">添加链接</button>
+<body class="popup-body">
+  <div class="form-header">
+    <h2>
+      <svg class="header-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+      <span data-i18n="add_link_title">添加链接</span>
+    </h2>
+    <button class="close-btn" id="close-btn" aria-label="关闭">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18"/>
+        <line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
   </div>
+  
+  <form class="popup-form" id="add-link-form">
+    <div class="form-group">
+      <label for="category-name" data-i18n="category_name_label">分类名称 *</label>
+      <input type="text" id="category-name" data-i18n-placeholder="category_name_placeholder" placeholder="链接分类" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="link-name" data-i18n="link_name_label">链接名称 *</label>
+      <input type="text" id="link-name" data-i18n-placeholder="link_name_placeholder" placeholder="链接名称" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="link-url" data-i18n="link_url_label">链接地址 *</label>
+      <input type="url" id="link-url" data-i18n-placeholder="link_url_placeholder" placeholder="https://example.com" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="link-icon" data-i18n="link_icon_label">网站图标</label>
+      <input type="url" id="link-icon" data-i18n-placeholder="link_icon_placeholder" placeholder="https://example.com/favicon.ico">
+    </div>
+    
+    <div class="form-group">
+      <label for="link-desc" data-i18n="link_desc_label">链接描述</label>
+      <input type="text" id="link-desc" data-i18n-placeholder="link_desc_placeholder" placeholder="简短描述（可选）">
+    </div>
+    
+    <button type="submit" id="add-link" class="submit-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+      <span data-i18n="add_link_button">添加链接</span>
+    </button>
+  </form>
 
   <script src="popup.js"></script>
 </body>
