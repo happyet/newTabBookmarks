@@ -631,7 +631,7 @@ input.category-name-input {
   backdrop-filter: blur(10px);
   transition: all var(--transition-normal);
   cursor: pointer;
-  min-width: 0;
+  overflow: hidden;
 }
 
 .link:hover {
@@ -717,7 +717,7 @@ span.link-logo {
   font-size: 11px;
   padding: 4px 8px;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   border: none;
 }
 
@@ -1046,9 +1046,12 @@ span.link-logo {
     color: rgba(255, 255, 255, 0.9);
   }
 
-  .popup-form .form-group input:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+  .popup-form .form-group input:hover,
+  .popup-form .form-group input:focus,
+  .popup-form .form-group input:active,
+  .popup-form .form-group input:hover:not(:focus) {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.4);
   }
 
   .form-header h2, .popup-form .form-group label {
