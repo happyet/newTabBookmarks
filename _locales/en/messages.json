@@ -254,5 +254,253 @@
   "error_load_category_failed": {
     "message": "Failed to load categories, please enter manually",
     "description": "Error message when failed to load categories"
+  },
+  "pick_local_image": {
+    "message": "Select",
+    "description": "Button to pick a local image"
+  },
+  "local_image_placeholder": {
+    "message": "Local image selected",
+    "description": "Placeholder shown when a local image is set as background"
+  },
+  "local_image_selected": {
+    "message": "Local image selected, save settings to apply",
+    "description": "Alert after picking a local image"
+  },
+  "local_image_multi_selected": {
+    "message": "{count} images selected, auto-switching every 60s",
+    "description": "Alert after picking multiple local images"
+  },
+  "local_image_failed": {
+    "message": "Failed to store image: {message}",
+    "description": "Error when storing local image fails"
+  },
+  "file_url_not_supported": {
+    "message": "file:// URLs are not supported, please use a web URL or upload an image",
+    "description": "Error when saving file:// URL as background"
+  },
+  "modal_ok": {
+    "message": "OK",
+    "description": "Modal dialog OK button"
+  },
+  "modal_cancel": {
+    "message": "Cancel",
+    "description": "Modal dialog Cancel button"
+  },
+  "bookmark_api_unavailable": {
+    "message": "Bookmarks API not available",
+    "description": "Error when bookmarks API is unavailable"
+  },
+  "uncategorized": {
+    "message": "Uncategorized",
+    "description": "Default folder name for uncategorized bookmarks"
+  },
+  "poem_no_data": {
+    "message": "No poem for today",
+    "description": "Message when no poem data available"
+  },
+  "switch_storage_confirm": {
+    "message": "Switch to local storage?",
+    "description": "Confirm switching to local storage mode"
+  },
+  "switch_storage_confirm2": {
+    "message": "Switch to sync storage?",
+    "description": "Confirm switching to sync storage mode"
+  },
+  "migrate_storage_confirm": {
+    "message": "Data found in the other storage mode. Migrate to current mode? Original data will not be deleted.",
+    "description": "Confirm migrating storage data"
+  },
+  "migrate_success": {
+    "message": "Data migrated successfully",
+    "description": "Success message for storage migration"
+  },
+  "category_empty_error": {
+    "message": "Category name cannot be empty!",
+    "description": "Error when category name is empty"
+  },
+  "category_exists_error": {
+    "message": "Category name already exists!",
+    "description": "Error when category name already exists"
+  },
+  "category_updated": {
+    "message": "Category name updated",
+    "description": "Success message for category rename"
+  },
+  "delete_category_confirm": {
+    "message": "Are you sure you want to delete category \"{category}\" and all its links?",
+    "description": "Confirm deleting a category"
+  },
+  "delete_link_confirm": {
+    "message": "Are you sure you want to delete this link?",
+    "description": "Confirm deleting a link"
+  },
+  "edit_link_name": {
+    "message": "Edit Link Name:",
+    "description": "Label for editing link name"
+  },
+  "edit_link_url": {
+    "message": "Edit Link URL:",
+    "description": "Label for editing link URL"
+  },
+  "edit_link_icon": {
+    "message": "Edit Link Icon:",
+    "description": "Label for editing link icon"
+  },
+  "edit_link_desc": {
+    "message": "Edit Link Description:",
+    "description": "Label for editing link description"
+  },
+  "import_success": {
+    "message": "Import successful!",
+    "description": "Success message for bookmark import"
+  },
+  "import_invalid_format": {
+    "message": "Import failed: invalid JSON format!",
+    "description": "Error for invalid import file format"
+  },
+  "import_failed": {
+    "message": "Import failed: ",
+    "description": "Error prefix for import failure"
+  },
+  "no_bookmarks": {
+    "message": "No bookmarks found in browser",
+    "description": "Message when no browser bookmarks found"
+  },
+  "import_method_title": {
+    "message": "Found {count} bookmarks. Choose import method:\n\nOK: Merge into existing categories\nCancel: Import by browser's original categories",
+    "description": "Import method selection dialog"
+  },
+  "existing_categories": {
+    "message": "Existing categories: {categories}\n\nEnter a name to create a new category or add to an existing one",
+    "description": "Prompt for selecting import target category"
+  },
+  "enter_new_category": {
+    "message": "Please enter a new category name:",
+    "description": "Prompt for new category name"
+  },
+  "import_cancelled": {
+    "message": "Import cancelled",
+    "description": "Message when import is cancelled"
+  },
+  "all_exists": {
+    "message": "All bookmarks already exist, nothing to import",
+    "description": "Message when all bookmarks are duplicates"
+  },
+  "imported_to_category": {
+    "message": "Successfully imported {count} bookmarks to category \"{category}\"{skipped}",
+    "description": "Success message for import to specific category"
+  },
+  "skipped_duplicates": {
+    "message": ", skipped {count} duplicates",
+    "description": "Suffix when some bookmarks were skipped as duplicates"
+  },
+  "import_by_category": {
+    "message": "Imported by browser's original categories{skipped}",
+    "description": "Success message for category-based import"
+  },
+  "settings_saved": {
+    "message": "Settings saved to {sync} storage",
+    "description": "Success message for saving settings"
+  },
+  "sync_storage": {
+    "message": "sync",
+    "description": "Sync storage label"
+  },
+  "local_storage": {
+    "message": "local",
+    "description": "Local storage label"
+  },
+  "clear_confirm1": {
+    "message": "Are you sure you want to clear all bookmarks? This cannot be undone!",
+    "description": "First confirmation for clearing all data"
+  },
+  "clear_confirm2": {
+    "message": "Confirm again: delete all bookmark data?",
+    "description": "Second confirmation for clearing all data"
+  },
+  "clear_failed": {
+    "message": "Clear failed: ",
+    "description": "Error prefix when clearing data fails"
+  },
+  "error_link_exists": {
+    "message": "This link already exists!",
+    "description": "Error when adding a duplicate link"
+  },
+  "error_add_failed": {
+    "message": "Failed to add link, please try again.",
+    "description": "Error when adding link fails"
+  },
+  "emoji_clear": {
+    "message": "Clear",
+    "description": "Emoji picker clear button"
+  },
+  "untitled": {
+    "message": "Untitled",
+    "description": "Fallback title for untitled bookmarks"
+  },
+  "current_date_aria": {
+    "message": "Current Date",
+    "description": "Aria label for current date display"
+  },
+  "current_time_aria": {
+    "message": "Current Time",
+    "description": "Aria label for current time display"
+  },
+  "close_button_aria": {
+    "message": "Close",
+    "description": "Aria label for close button"
+  },
+  "storage_toggle_aria": {
+    "message": "Toggle Storage Mode",
+    "description": "Aria label for storage mode toggle button"
+  },
+  "all_cleared": {
+    "message": "All bookmarks have been cleared",
+    "description": "Success message after clearing all bookmarks"
+  },
+  "save_failed": {
+    "message": "Save failed: ",
+    "description": "Error prefix for save failures"
+  },
+  "todo_button": {
+    "message": "Todo",
+    "description": "Todo button text in menu"
+  },
+  "todo_title": {
+    "message": "Todo",
+    "description": "Todo dialog title"
+  },
+  "todo_input_placeholder": {
+    "message": "Add a new todo...",
+    "description": "Todo input placeholder"
+  },
+  "todo_add": {
+    "message": "Add",
+    "description": "Add todo button text"
+  },
+  "todo_clear_done": {
+    "message": "Clear Completed",
+    "description": "Clear completed todos button text"
+  },
+  "todo_empty": {
+    "message": "No todos yet",
+    "description": "Empty todo list message"
+  },
+  "todo_export": {
+    "message": "Export",
+    "description": "Export todos button"
+  },
+  "duty_today": {
+    "message": "Today",
+    "description": "Today's duty label"
+  },
+  "duty_tomorrow": {
+    "message": "Tomorrow",
+    "description": "Tomorrow's duty label"
+  },
+  "duty_me": {
+    "message": "Me",
+    "description": "Label for personal duty indicator"
   }
 }

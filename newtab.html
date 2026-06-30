@@ -9,32 +9,51 @@
 </head>
 <body>
 <div class="wrapper">
-  <aside class="wrapper-left" role="navigation" aria-label="Category Navigation">
+  <div class="wrapper-left" role="navigation" data-i18n-aria-label="navigation_label" aria-label="Category Navigation">
     <h1 id="site-title" data-i18n="newtab_title">LeHu Bookmarks</h1>
-    <h2 id="current-date" data-i18n="date_format" aria-label="Current Date">January 01, 2000</h2>
-    <h3 id="current-time" data-i18n="time_format" aria-label="Current Time">Monday  00:00:00</h3>
-    <nav id="categories" aria-label="Bookmark Category List">
+    <h2 id="current-date" data-i18n="date_format" data-i18n-aria-label="current_date_aria" aria-label="Current Date">January 01, 2000</h2>
+    <h3 id="current-time" data-i18n="time_format" data-i18n-aria-label="current_time_aria" aria-label="Current Time">Monday  00:00:00</h3>
+    <div id="weather-info" class="weather-info hidden"></div>
+    <nav id="categories" data-i18n-aria-label="bookmark_category_list" aria-label="Bookmark Category List">
     </nav>
-  </aside>
+  </div>
   
   <main class="wrapper-right" role="main">
-    <div id="import-export-buttons" role="group" aria-label="Edit Tools">
-      <button id="toggle-edit" type="button" data-i18n="edit_button" aria-pressed="false">Edit</button>
-      <button id="setting" type="button" data-i18n="settings_button" aria-label="Settings">Settings</button>
-      <button id="storage-toggle" type="button" data-i18n="sync_mode_button" aria-label="Toggle Storage Mode">Sync Mode</button>
-      <button id="import-bookmarks" type="button" data-i18n="import_bookmarks">Import Bookmarks</button>
-      <button id="import-json" type="button" data-i18n="import_button" class="edit-mode-button">Import</button>
-      <button id="export-json" type="button" data-i18n="export_button" class="edit-mode-button">Export</button>
+    <div id="menu-container">
+      <button id="todo-btn" type="button" data-i18n-title="todo_button" title="Todo">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M9 11l3 3L22 4"/>
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+        </svg>
+        <span id="todo-badge" class="todo-badge hidden"></span>
+      </button>
+      <button id="menu-toggle" type="button" aria-label="Menu" aria-haspopup="true">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"/>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+        </svg>
+      </button>
+      <div id="menu-dropdown" class="menu-dropdown hidden" role="menu">
+        <button id="toggle-edit" type="button" data-i18n="edit_button" role="menuitem">Edit</button>
+        <button id="setting" type="button" data-i18n="settings_button" role="menuitem">Settings</button>
+        <button id="storage-toggle" type="button" data-i18n="sync_mode_button" role="menuitem">Sync Mode</button>
+        <div class="menu-divider"></div>
+        <button id="import-json" type="button" data-i18n="import_button" class="edit-mode-button" role="menuitem">Import</button>
+        <button id="export-json" type="button" data-i18n="export_button" class="edit-mode-button" role="menuitem">Export</button>
+        <button id="import-bookmarks" type="button" data-i18n="import_bookmarks" role="menuitem">Import Bookmarks</button>
+        <div class="menu-divider"></div>
+        <button id="clear-all" type="button" data-i18n="clear_all_button" class="edit-mode-button danger" role="menuitem">Clear All Bookmarks</button>
+      </div>
     </div>
 
-    <section class="poem_content" aria-label="Daily Poem">
+    <section class="poem_content" data-i18n-aria-label="daily_poem" aria-label="Daily Poem">
       <div>
-        <h3 id="poem_sentence" data-i18n="daily_poem" aria-live="polite"></h3>
+        <h3 id="poem_sentence" aria-live="polite"></h3>
         <span id="poem_info"></span>
       </div>
     </section>
     
-    <form class="searchform" action="https://www.bing.com/search" method="get" target="_blank" role="search" aria-label="Search">
+    <form class="searchform" action="https://www.bing.com/search" method="get" target="_blank" role="search" data-i18n-aria-label="search_label" aria-label="Search">
       <input 
         class="search" 
         id="search-input" 
@@ -49,7 +68,9 @@
       >
       <ul id="search-results" data-i18n-aria-label="search_results" role="listbox" aria-label="Search Results"></ul>
     </form>
-    
+
+    <div id="top-sites" class="top-sites-container"></div>
+
     <nav id="nav-list" data-i18n-aria-label="bookmark_links" aria-label="Bookmark Links List">
       <!-- Navigation links will be dynamically loaded here -->
     </nav>
@@ -73,7 +94,10 @@
     </p>
     <p>
       <label for="background-image" data-i18n="background_image_label">Background Image URL:</label>
-      <input type="url" id="background-image" data-i18n-placeholder="background_image_placeholder" placeholder="Enter background image URL">
+      <span class="input-group">
+        <input type="url" id="background-image" data-i18n-placeholder="background_image_placeholder" placeholder="Enter background image URL">
+        <button type="button" id="pick-local-image" data-i18n="pick_local_image">Select</button>
+      </span>
     </p>
     <p>
       <input type="checkbox" id="use-bing-image"> 
@@ -87,14 +111,57 @@
       <label for="background-opacity" data-i18n="background_opacity_label">Background Opacity:</label>
       <input type="number" id="background-opacity" min="0" max="1" step="0.01" value="0.8">
     </p>
+    <p>
+      <label for="amap-key">高德 API Key</label>
+      <input type="text" id="amap-key" placeholder="请输入高德 Web 服务 Key">
+      <small style="display:block;margin-top:4px;opacity:0.6;font-size:12px">
+        <a href="https://console.amap.com/dev/key/app" target="_blank" rel="noopener">高德开放平台注册</a>
+      </small>
+    </p>
+    <hr style="margin:12px 0;border:none;border-top:1px solid var(--border)">
+    <p>
+      <label for="duty-api-url">值班 API 地址</label>
+      <input type="url" id="duty-api-url" placeholder="https://example.com/api/duty">
+    </p>
+    <p>
+      <label for="duty-api-key">值班 API Key</label>
+      <input type="text" id="duty-api-key" placeholder="请输入 API Key">
+    </p>
   </form>
   <div class="settings-buttons">
     <button id="save-settings" type="button" data-i18n="save_button">Save</button>
-    <button id="clear-all" type="button" data-i18n="clear_all_button" class="danger">Clear All Bookmarks</button>
     <button id="cancel-settings" type="button" data-i18n="cancel_button">Cancel</button>
   </div>
 </div>
 
+<!-- Todo dialog overlay -->
+<div id="todo-dialog-overlay" class="hidden"></div>
+
+<!-- Todo dialog -->
+<div id="todo-dialog" class="hidden" role="dialog" aria-labelledby="todo-title" aria-modal="true">
+  <div class="todo-head">
+    <div class="todo-dialog-header">
+      <h3 id="todo-title" data-i18n="todo_title">Todo</h3>
+      <button id="todo-close" type="button" class="todo-close-btn" aria-label="Close">✕</button>
+    </div>
+    <div class="todo-input-area">
+      <input type="text" id="todo-input" data-i18n-placeholder="todo_input_placeholder" placeholder="Add a new todo...">
+    </div>
+    <div class="todo-colors">
+      <button id="todo-export" type="button" data-i18n="todo_export">Export</button>
+      <button id="todo-clear-done" type="button" data-i18n="todo_clear_done">Clear Completed</button>
+      <button type="button" class="todo-color-btn" data-value="1" style="background:#ef4444"></button>
+      <button type="button" class="todo-color-btn" data-value="2" style="background:#f59e0b"></button>
+      <button type="button" class="todo-color-btn" data-value="3" style="background:#10b981"></button>
+      <button id="todo-add" type="button" data-i18n="todo_add">Add</button>
+    </div>
+  </div>
+  <div id="todo-list" class="todo-body"></div>
+</div>
+
+<div id="toast-container" class="toast-container"></div>
+
+<script src="shared.js"></script>
 <script src="newtab.js"></script>
 </body>
 </html>

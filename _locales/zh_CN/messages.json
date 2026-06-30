@@ -20,7 +20,7 @@
     "description": "Title for adding link section"
   },
   "category_name_label": {
-    "message": "分类名称(*)：",
+    "message": "分类名称(*):",
     "description": "Label for category name input"
   },
   "category_name_placeholder": {
@@ -48,7 +48,7 @@
     "description": "Label for link icon input"
   },
   "link_icon_placeholder": {
-    "message": "链接图标",
+    "message": "链接图标 URL",
     "description": "Placeholder for link icon input"
   },
   "link_desc_label": {
@@ -96,7 +96,7 @@
     "description": "Title of newtab page"
   },
   "date_format": {
-    "message": "0000年00月00日",
+    "message": "0000年0月0日",
     "description": "Date format display"
   },
   "time_format": {
@@ -124,7 +124,7 @@
     "description": "Local mode button text"
   },
   "import_bookmarks": {
-    "message": "书签导入",
+    "message": "收藏夹导入",
     "description": "Import bookmarks button text"
   },
   "import_button": {
@@ -148,7 +148,7 @@
     "description": "Search input aria label"
   },
   "footer_text": {
-    "message": "© 自娱自乐，不亦乐乎!",
+    "message": "© 自娱自乐，不亦乐乎",
     "description": "Footer copyright text"
   },
   "settings_dialog_title": {
@@ -164,15 +164,15 @@
     "description": "Page title input placeholder"
   },
   "background_image_label": {
-    "message": "背景图片URL:",
+    "message": "背景图片:",
     "description": "Background image URL label"
   },
   "background_image_placeholder": {
-    "message": "输入背景图片URL",
+    "message": "输入背景图片 URL",
     "description": "Background image URL placeholder"
   },
   "use_bing_image": {
-    "message": "使用Bing每日一图",
+    "message": "使用 Bing 每日一图",
     "description": "Use Bing daily image checkbox label"
   },
   "background_color_label": {
@@ -254,5 +254,253 @@
   "error_load_category_failed": {
     "message": "无法加载分类，请手动输入",
     "description": "Error message when failed to load categories"
+  },
+  "pick_local_image": {
+    "message": "选择",
+    "description": "Button to pick a local image"
+  },
+  "local_image_placeholder": {
+    "message": "已选择本地图片",
+    "description": "Placeholder shown when a local image is set as background"
+  },
+  "local_image_selected": {
+    "message": "本地图片已选择，保存设置后生效",
+    "description": "Alert after picking a local image"
+  },
+  "local_image_multi_selected": {
+    "message": "{count}张图片已选择，每60秒自动切换",
+    "description": "Alert after picking multiple local images"
+  },
+  "local_image_failed": {
+    "message": "存储图片失败: {message}",
+    "description": "Error when storing local image fails"
+  },
+  "file_url_not_supported": {
+    "message": "不支持 file:// 路径，请使用网络图片地址或上传图片",
+    "description": "Error when saving file:// URL as background"
+  },
+  "modal_ok": {
+    "message": "确定",
+    "description": "Modal dialog OK button"
+  },
+  "modal_cancel": {
+    "message": "取消",
+    "description": "Modal dialog Cancel button"
+  },
+  "bookmark_api_unavailable": {
+    "message": "书签 API 不可用",
+    "description": "Error when bookmarks API is unavailable"
+  },
+  "uncategorized": {
+    "message": "未分类",
+    "description": "Default folder name for uncategorized bookmarks"
+  },
+  "poem_no_data": {
+    "message": "今日无诗词",
+    "description": "Message when no poem data available"
+  },
+  "switch_storage_confirm": {
+    "message": "切换到本地存储？",
+    "description": "Confirm switching to local storage mode"
+  },
+  "switch_storage_confirm2": {
+    "message": "切换到同步存储？",
+    "description": "Confirm switching to sync storage mode"
+  },
+  "migrate_storage_confirm": {
+    "message": "检测到另一存储模式有数据，是否迁移到当前模式？原数据不会被删除。",
+    "description": "Confirm migrating storage data"
+  },
+  "migrate_success": {
+    "message": "数据迁移成功",
+    "description": "Success message for storage migration"
+  },
+  "category_empty_error": {
+    "message": "分类名称不能为空！",
+    "description": "Error when category name is empty"
+  },
+  "category_exists_error": {
+    "message": "分类名称已存在！",
+    "description": "Error when category name already exists"
+  },
+  "category_updated": {
+    "message": "分类名称已更新",
+    "description": "Success message for category rename"
+  },
+  "delete_category_confirm": {
+    "message": "确定要删除分类\"{category}\"及其所有书签吗？",
+    "description": "Confirm deleting a category"
+  },
+  "delete_link_confirm": {
+    "message": "确认删除此链接？",
+    "description": "Confirm deleting a link"
+  },
+  "edit_link_name": {
+    "message": "编辑链接名称:",
+    "description": "Label for editing link name"
+  },
+  "edit_link_url": {
+    "message": "编辑链接地址:",
+    "description": "Label for editing link URL"
+  },
+  "edit_link_icon": {
+    "message": "编辑链接图标:",
+    "description": "Label for editing link icon"
+  },
+  "edit_link_desc": {
+    "message": "编辑链接描述:",
+    "description": "Label for editing link description"
+  },
+  "import_success": {
+    "message": "导入成功！",
+    "description": "Success message for bookmark import"
+  },
+  "import_invalid_format": {
+    "message": "导入失败：无效的 JSON 格式！",
+    "description": "Error for invalid import file format"
+  },
+  "import_failed": {
+    "message": "导入失败：",
+    "description": "Error prefix for import failure"
+  },
+  "no_bookmarks": {
+    "message": "未找到浏览器书签",
+    "description": "Message when no browser bookmarks found"
+  },
+  "import_method_title": {
+    "message": "找到 {count} 个书签，请选择导入方式：\n\n确定：合并到现有分类\n取消：按浏览器原分类导入",
+    "description": "Import method selection dialog"
+  },
+  "existing_categories": {
+    "message": "现有分类：{categories}\n\n输入名称以创建新分类或添加到现有分类",
+    "description": "Prompt for selecting import target category"
+  },
+  "enter_new_category": {
+    "message": "请输入新分类名称：",
+    "description": "Prompt for new category name"
+  },
+  "import_cancelled": {
+    "message": "导入已取消",
+    "description": "Message when import is cancelled"
+  },
+  "all_exists": {
+    "message": "所有书签已存在，无需导入",
+    "description": "Message when all bookmarks are duplicates"
+  },
+  "imported_to_category": {
+    "message": "成功导入 {count} 个书签到分类\"{category}\"{skipped}",
+    "description": "Success message for import to specific category"
+  },
+  "skipped_duplicates": {
+    "message": "，跳过 {count} 个重复书签",
+    "description": "Suffix when some bookmarks were skipped as duplicates"
+  },
+  "import_by_category": {
+    "message": "按浏览器原书签分类导入成功{skipped}",
+    "description": "Success message for category-based import"
+  },
+  "settings_saved": {
+    "message": "设置已保存到{sync}存储",
+    "description": "Success message for saving settings"
+  },
+  "sync_storage": {
+    "message": "同步",
+    "description": "Sync storage label"
+  },
+  "local_storage": {
+    "message": "本地",
+    "description": "Local storage label"
+  },
+  "clear_confirm1": {
+    "message": "确定要清空所有书签吗？此操作无法撤销！",
+    "description": "First confirmation for clearing all data"
+  },
+  "clear_confirm2": {
+    "message": "再次确认：删除所有书签数据？",
+    "description": "Second confirmation for clearing all data"
+  },
+  "clear_failed": {
+    "message": "清空失败：",
+    "description": "Error prefix when clearing data fails"
+  },
+  "error_link_exists": {
+    "message": "该链接已存在！",
+    "description": "Error when adding a duplicate link"
+  },
+  "error_add_failed": {
+    "message": "添加链接失败，请重试。",
+    "description": "Error when adding link fails"
+  },
+  "emoji_clear": {
+    "message": "清除",
+    "description": "Emoji picker clear button"
+  },
+  "untitled": {
+    "message": "未命名",
+    "description": "Fallback title for untitled bookmarks"
+  },
+  "current_date_aria": {
+    "message": "当前日期",
+    "description": "Aria label for current date display"
+  },
+  "current_time_aria": {
+    "message": "当前时间",
+    "description": "Aria label for current time display"
+  },
+  "close_button_aria": {
+    "message": "关闭",
+    "description": "Aria label for close button"
+  },
+  "storage_toggle_aria": {
+    "message": "切换存储模式",
+    "description": "Aria label for storage mode toggle button"
+  },
+  "all_cleared": {
+    "message": "所有书签已清空",
+    "description": "Success message after clearing all bookmarks"
+  },
+  "save_failed": {
+    "message": "保存失败：",
+    "description": "Error prefix for save failures"
+  },
+  "todo_button": {
+    "message": "待办事项",
+    "description": "Todo button text in menu"
+  },
+  "todo_title": {
+    "message": "待办事项",
+    "description": "Todo dialog title"
+  },
+  "todo_input_placeholder": {
+    "message": "添加新的待办事项...",
+    "description": "Todo input placeholder"
+  },
+  "todo_add": {
+    "message": "添加",
+    "description": "Add todo button text"
+  },
+  "todo_clear_done": {
+    "message": "清除已完成",
+    "description": "Clear completed todos button text"
+  },
+  "todo_empty": {
+    "message": "还没有待办事项",
+    "description": "Empty todo list message"
+  },
+  "todo_export": {
+    "message": "导出",
+    "description": "Export todos button"
+  },
+  "duty_today": {
+    "message": "今日值班",
+    "description": "Today's duty label"
+  },
+  "duty_tomorrow": {
+    "message": "明日值班",
+    "description": "Tomorrow's duty label"
+  },
+  "duty_me": {
+    "message": "我",
+    "description": "Label for personal duty indicator"
   }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <title>添加链接</title>
+  <title id="popup-title"></title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
@@ -14,7 +14,7 @@
       </svg>
       <span data-i18n="add_link_title">添加链接</span>
     </h2>
-    <button class="close-btn" id="close-btn" aria-label="关闭">
+    <button class="close-btn" id="close-btn" data-i18n-aria-label="close_button_aria" aria-label="Close">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <line x1="18" y1="6" x2="6" y2="18"/>
         <line x1="6" y1="6" x2="18" y2="18"/>
@@ -57,6 +57,7 @@
     </button>
   </form>
 
-  <script src="popup.js"></script>
+  <script src="shared.js"></script>
+<script src="popup.js"></script>
 </body>
 </html>
